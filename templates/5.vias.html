@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <img src="{{'/static/vias.png'}}" alt="Imagen de bienvenida" class="img-fluid rounded mx-auto d-block mb-4" tyle="width: 35; height: 230px">
+            <h2>Distribución de Vías de Tráfico y Patrones de Accidentes en Chicago</h2>
+            <p>Esta gráfica muestra las vías de tráfico más comunes donde ocurren accidentes en Chicago, revelando patrones claros en la distribución de estos incidentes en diferentes tipos de vías. Los accidentes más comunes ocurren en vías no divididas, con más de 300,000 registros. Esto sugiere una mayor exposición al riesgo debido a la falta de separación física entre los carriles, lo que facilita las colisiones laterales y otras interacciones peligrosas entre vehículos.</p>
+            <p>Las vías divididas sin barrera en medio representan cerca de 150,000 accidentes, mostrando un riesgo considerable, aunque menor que las vías no divididas. Estas divisiones, sin embargo, no ofrecen la misma protección contra colisiones frontales o laterales que las vías divididas con barrera.</p>
+            <p>Las vías unidireccionales, con un poco más de 100,000 accidentes, presentan un riesgo menor, pero los incidentes reflejan desafíos como cambios de carril bruscos o entradas y salidas mal ejecutadas. Los cruces de cuatro vías, que ocurren en intersecciones complejas, registran una cantidad significativa de accidentes debido a la necesidad de cumplir con las señales de tránsito y las interacciones entre vehículos en estas zonas.</p>
+            <p>Los accidentes en estacionamientos, aunque menos frecuentes, se asocian con maniobras a baja velocidad, como entradas y salidas, donde los riesgos son diferentes a las vías principales.</p>
+            <p>Esta gráfica de barras destaca la necesidad de mejorar las infraestructuras de tráfico, enfocándose en áreas vulnerables como las vías no divididas y las intersecciones complejas, donde los accidentes son más probables. También subraya la importancia de educar a los conductores sobre las reglas de tránsito y promover el uso de tecnologías de seguridad que puedan mitigar los riesgos en estas diferentes condiciones de conducción.</p>
+            <br><br><br>
+            <h2>PROPUESTA DE SOLUCIÓN</h2>
+            <p>Se deben priorizar proyectos de infraestructura que incluyan la instalación de barreras físicas en vías no divididas y la implementación de diseños de intersección más seguros, como las rotondas y las señales de prioridad para peatones. Además, la mejora en el mantenimiento de las señales y marcas viales en estas zonas puede ayudar a reducir las colisiones. La educación continuada para los conductores sobre cómo manejar en estas condiciones también es esencial para prevenir accidentes.</p>
+        </div>
+
+    {% include 'footer.html' %}

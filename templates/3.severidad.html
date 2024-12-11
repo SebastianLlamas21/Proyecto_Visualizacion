@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <img src="{{'/static/accidentes_clima.png'}}" alt="Imagen de bienvenida" class="img-fluid rounded mx-auto d-block mb-4" tyle="width: 35; height: 230px">
+            <h2>Gráfico de Severidad de Accidentes por Clima en Chicago</h2>
+            <p>Tenemos este gráfico de barras apiladas que muestra la severidad de los accidentes por clima en Chicago. Este gráfico revela una consistencia general en los datos de los informes de accidentes:</p>
+            <ul>
+                <li><strong>Reporte sin lesión:</strong> En todos los climas, alrededor del 90% de los accidentes se reportan sin lesiones. Esto sugiere que los factores climáticos, aunque presentes, no son necesariamente determinantes de la gravedad de las lesiones en la mayoría de los casos.</li>
+                <li><strong>Lesión no incapacitante:</strong> La segunda barra más alta en el gráfico muestra que los accidentes con lesiones no incapacitantes son más comunes que las lesiones graves o fatales. Esto indica que, aunque los climas adversos pueden incrementar el riesgo de accidentes, la mayoría no resultan en lesiones graves gracias a las medidas de seguridad como los cinturones de seguridad y las bolsas de aire.</li>
+                <li><strong>Accidentes graves:</strong> Los accidentes que resultan en lesiones graves o fatales son minoritarios en comparación con los sin lesiones y los no incapacitantes, incluso en condiciones climáticas adversas.</li>
+            </ul>
+            <br><br><br>
+            <h2>PROPUESTA DE SOLUCIÓN</h2>
+            <p>Se recomienda una revisión periódica de las condiciones viales en áreas problemáticas para garantizar que las señales y las marcas de carril estén visibles y en buen estado. Las campañas de concienciación dirigidas a los conductores sobre la importancia de la precaución y la seguridad al volante en condiciones adversas, así como el uso de dispositivos de seguridad (cinturones de seguridad y bolsas de aire), deben ser reforzadas. Además, es fundamental realizar estudios regulares para identificar y corregir los puntos críticos en las intersecciones y otras zonas de alto riesgo.</p>
+        </div>
+    
+
+    {% include 'footer.html' %}

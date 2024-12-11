@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <img src="{{'/static/chicago.png'}}" alt="Imagen de bienvenida" class="img-fluid rounded mx-auto d-block mb-4" tyle="width: 35; height: 230px">
+            <h2>Diccionario de Datos</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CRASH_DATE</td>
+                        <td>character</td>
+                        <td>Fecha y hora del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>POSTED_SPEED_LIMIT</td>
+                        <td>integer</td>
+                        <td>Límite de velocidad publicado en la vía</td>
+                    </tr>
+                    <tr>
+                        <td>TRAFFIC_CONTROL_DEVICE</td>
+                        <td>character</td>
+                        <td>Dispositivo de control de tráfico en la escena</td>
+                    </tr>
+                    <tr>
+                        <td>DEVICE_CONDITION</td>
+                        <td>character</td>
+                        <td>Estado del dispositivo de control de tráfico</td>
+                    </tr>
+                    <tr>
+                        <td>WEATHER_CONDITION</td>
+                        <td>character</td>
+                        <td>Condición climática durante el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>LIGHTING_CONDITION</td>
+                        <td>character</td>
+                        <td>Condición de iluminación durante el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>FIRST_CRASH_TYPE</td>
+                        <td>character</td>
+                        <td>Tipo de accidente inicial (por ejemplo, choque trasero)</td>
+                    </tr>
+                    <tr>
+                        <td>TRAFFICWAY_TYPE</td>
+                        <td>character</td>
+                        <td>Tipo de vía en la que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>ALIGNMENT</td>
+                        <td>character</td>
+                        <td>Alineación de la carretera en el lugar del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>ROADWAY_SURFACE_COND</td>
+                        <td>character</td>
+                        <td>Condición de la superficie de la carretera</td>
+                    </tr>
+                    <tr>
+                        <td>ROAD_DEFECT</td>
+                        <td>character</td>
+                        <td>Defecto en la carretera relacionado con el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>REPORT_TYPE</td>
+                        <td>character</td>
+                        <td>Tipo de informe policial (en el lugar, en oficina)</td>
+                    </tr>
+                    <tr>
+                        <td>CRASH_TYPE</td>
+                        <td>character</td>
+                        <td>Tipo de accidente (heridas, sin heridas, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>DAMAGE</td>
+                        <td>character</td>
+                        <td>Categoría de daño (por ejemplo, daño leve, severo)</td>
+                    </tr>
+                    <tr>
+                        <td>DATE_POLICE_NOTIFIED</td>
+                        <td>character</td>
+                        <td>Fecha de notificación a la policía</td>
+                    </tr>
+                    <tr>
+                        <td>PRIM_CONTRIBUTORY_CAUSE</td>
+                        <td>character</td>
+                        <td>Causa principal del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>SEC_CONTRIBUTORY_CAUSE</td>
+                        <td>character</td>
+                        <td>Causa secundaria del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>STREET_NO</td>
+                        <td>integer</td>
+                        <td>Número de la calle en la que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>STREET_DIRECTION</td>
+                        <td>character</td>
+                        <td>Dirección de la calle en la que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>STREET_NAME</td>
+                        <td>character</td>
+                        <td>Nombre de la calle en la que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>BEAT_OF_OCCURRENCE</td>
+                        <td>integer</td>
+                        <td>Área policial de ocurrencia del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>NUM_UNITS</td>
+                        <td>integer</td>
+                        <td>Número de vehículos involucrados en el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>MOST_SEVERE_INJURY</td>
+                        <td>character</td>
+                        <td>Lesión más severa sufrida en el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_TOTAL</td>
+                        <td>integer</td>
+                        <td>Número total de lesiones reportadas</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_FATAL</td>
+                        <td>integer</td>
+                        <td>Número de lesiones fatales</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_INCAPACITATING</td>
+                        <td>integer</td>
+                        <td>Número de lesiones incapacitantes</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_NON_INCAPACITATING</td>
+                        <td>integer</td>
+                        <td>Número de lesiones no incapacitantes</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_REPORTED_NOT_EVIDENT</td>
+                        <td>integer</td>
+                        <td>Número de lesiones reportadas pero no evidentes</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_NO_INDICATION</td>
+                        <td>integer</td>
+                        <td>Número de lesiones sin indicación</td>
+                    </tr>
+                    <tr>
+                        <td>INJURIES_UNKNOWN</td>
+                        <td>integer</td>
+                        <td>Número de lesiones con información desconocida</td>
+                    </tr>
+                    <tr>
+                        <td>CRASH_HOUR</td>
+                        <td>integer</td>
+                        <td>Hora del día en que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>CRASH_DAY_OF_WEEK</td>
+                        <td>integer</td>
+                        <td>Día de la semana en que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>CRASH_MONTH</td>
+                        <td>integer</td>
+                        <td>Mes en que ocurrió el accidente</td>
+                    </tr>
+                    <tr>
+                        <td>LATITUDE</td>
+                        <td>numeric</td>
+                        <td>Latitud del lugar del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>LONGITUDE</td>
+                        <td>numeric</td>
+                        <td>Longitud del lugar del accidente</td>
+                    </tr>
+                    <tr>
+                        <td>LOCATION</td>
+                        <td>character</td>
+                        <td>Ubicación del accidente en formato de coordenadas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+
+    {% include 'footer.html' %}

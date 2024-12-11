@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <img src="{{'/static/velocidad_fatalidad.png'}}" alt="Imagen de bienvenida" class="img-fluid rounded mx-auto d-block mb-4">
+            <h2>Velocidad y Fatalidad de Accidentes</h2>
+            <p>La velocidad alta es una de las principales razones de los accidentes de tránsito en Chicago y otras ciudades, y tiene consecuencias graves en algunas ocasiones para la salud de los pasajeros involucrados. La relación directa entre la velocidad y los accidentes se ha demostrado ampliamente en estudios y análisis de datos de siniestralidad vial.</p>
+            <p>En este gráfico se puede observar que no todos los accidentes a altas velocidades resultan en lesiones, pero hay ocasiones en las que incluso a bajas velocidades los accidentes pueden ser fatales. Aunque no son muy comunes los accidentes fatales, este fenómeno destaca la complejidad de la seguridad vial y cómo varios factores interactúan para determinar la severidad de un accidente.</p>
+            <p>Puede haber algunos factores que influyan en la gravedad de las lesiones como las condiciones de la carretera, las características del vehículo, la capacidad del conductor para reaccionar ante emergencias y el uso de dispositivos de seguridad (como cinturones de seguridad y bolsas de aire) también juegan un papel crucial. También se puede observar que hay picos de accidentes fatales a bajas velocidades que no siguen la misma correlación clara que a altas velocidades. Esto puede ser resultado de otros factores, como condiciones del pavimento (superficie resbaladiza, mal estado), falta de señalización adecuada, o incluso errores humanos inesperados.</p>
+            <br><br><br>
+            <h2>PROPUESTA DE SOLUCIÓN</h2>
+            <p>Para reducir la incidencia de accidentes graves y fatales, se deben implementar políticas de limitación de velocidad más estrictas en áreas urbanas de alta densidad, así como mejorar las señales de advertencia y la visibilidad de las mismas para los conductores. La educación vial también es crucial para informar a los conductores sobre los riesgos de exceso de velocidad y cómo pueden afectar la severidad de un accidente. Además, fomentar el uso de tecnologías de asistencia al conductor, como los sistemas de control de velocidad y los radares de seguridad, podría ayudar a reducir las violaciones de velocidad.</p>
+        </div>
+
+    
+
+    {% include 'footer.html' %}

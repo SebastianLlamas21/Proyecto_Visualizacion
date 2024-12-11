@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <iframe title="Distribución de choques en la ciudad de Chicago  (Copy)" aria-label="Map" id="datawrapper-chart-0abJE" src="https://datawrapper.dwcdn.net/0abJE/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="719" data-external="1"></iframe>
+            <script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+            </script>
+            <h2>Distribución de Accidentes de Vehículos en Chicago</h2>
+            <p>El mapa de Chicago que muestra la distribución de los golpes de vehículos permite observar patrones claros sobre la seguridad vial y los lugares donde los accidentes son más comunes en la ciudad. Este mapa es una herramienta poderosa para visualizar los lugares de alta densidad de accidentes y proporciona una visión más detallada de cómo los eventos se distribuyen a través de las diferentes zonas de la ciudad.</p>
+            <p>La visualización puede revelar que ciertas áreas de Chicago tienen una alta concentración de golpes. Estas zonas suelen corresponder a áreas de alta circulación de vehículos, cruces viales complejos, o secciones con infraestructura vial deficiente. Identificar estas áreas es crucial para dirigir políticas de seguridad vial, como la instalación de señales adicionales, la mejora del mantenimiento de las calles y la implementación de medidas de control de velocidad.</p>
+            <br><br><br>
+            <h2>PROPUESTA DE SOLUCIÓN</h2>
+            <p>La instalación de señales adicionales, la mejora del mantenimiento de las calles y la implementación de sistemas de control de velocidad en áreas críticas pueden ayudar a reducir la frecuencia de los accidentes en las zonas con alta densidad. Además, el uso de sistemas de monitoreo en tiempo real podría proporcionar alertas a los conductores sobre las condiciones viales y los incidentes recientes en estas áreas.</p>
+        </div>
+
+    
+
+    {% include 'footer.html' %}

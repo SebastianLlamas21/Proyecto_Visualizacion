@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Visualización de Datos Empresariales</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional theme -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 15px;
+            background-color: #343a40;
+            color: #ffffff;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 15px;
+        }
+        .content h2 {
+            color: #343a40;
+        }
+        .grafico-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.25rem;
+            color: #6c757d;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    {% include 'menu.html' %}
+
+
+        <div class="content">
+            <img src="{{'/static/razones.png'}}" alt="Imagen de bienvenida" class="img-fluid rounded mx-auto d-block mb-4">
+            <h2>Razones Comunes de los Accidentes de Tránsito en Chicago</h2>
+            <p>Los accidentes de tránsito pueden ocurrir por una variedad de motivos, y aunque algunos de estos factores no están bajo el control del piloto, la mayoría sí. El estudio ha identificado que el estado de las vías y la señalización pueden influir en los incidentes, los comportamientos del conductor siguen siendo la causa más común de accidentes.</p>
+            <p>Este gráfico de pastel muestra las 10 principales razones de los accidentes en Chicago, revelando una clara predominancia en el uso incorrecto de las líneas de carril como la causa más frecuente de accidentes, ocupando más de la mitad del gráfico. Esto destaca la falta de precaución al cambiar de carril o las distracciones mientras se maneja, lo que puede llevar a colisiones laterales y otros incidentes en las carreteras.</p>
+            <p>El siguiente lugar, con un menor pero significativo porcentaje, no respetar otras señales de tránsito. Esta categoría abarca la desobediencia a señales de limitación de velocidad, giros prohibidos, entre otras, que pueden llevar a situaciones peligrosas en las intersecciones y otras áreas de la ciudad.</p>
+            <p>Finalmente, corresponde a los accidentes causados por pasarse una señal de alto. Esto indica una falta de obediencia a las señales de tránsito, un comportamiento común que pone en peligro a los conductores, peatones y ciclistas. Además, que la señal de alto es mucho más estricta en ese país.</p>
+            <p>Esta distribución en la gráfica sugiere que hay una necesidad urgente de mejorar la educación en seguridad vial, dando importancia a seguir las reglas de tránsito y las señales para prevenir accidentes. Además, la implementación de medidas como sistemas de alerta y tecnologías de asistencia al conductor podría ayudar a mitigar estos errores humanos y reducir la frecuencia de los accidentes asociados con el uso incorrecto de las líneas de carril, el desconocimiento de las señales de tránsito y otros comportamientos imprudentes.</p>
+            <br><br><br>
+            <h2>PROPUESTA DE SOLUCIÓN</h2>
+            <p>Se debe fortalecer la educación vial en las escuelas y a través de campañas públicas que promuevan la adherencia a las señales de tránsito. Además, implementar tecnologías avanzadas de control de tráfico, como sistemas de cámaras en las intersecciones y radares de velocidad en zonas críticas, ayudaría a reducir la incidencia de accidentes. La colaboración con empresas de tecnología puede permitir el desarrollo de aplicaciones móviles que notifiquen a los conductores sobre el estado de la vía y las señales de tránsito en tiempo real.</p>
+        </div>
+
+
+    
+
+    {% include 'footer.html' %}
